@@ -28,7 +28,7 @@ coloredlogs.install(level=config('LOG_LEVEL', default='INFO'))
 st.set_page_config(page_title='Game of Thrones Chatbot', page_icon='⚔️', initial_sidebar_state="auto", menu_items=None)
 st.title("Tyrion Lannister - Game of Thrones ⚔️")
 
-tyrion_image = Image.open("tyrion.jpg")  
+tyrion_image = Image.open("Tyrion.jpg")  
 st.image(tyrion_image, caption="Tyrion Lannister", use_column_width=True)
 
 
