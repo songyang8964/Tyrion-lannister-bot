@@ -134,9 +134,10 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 
 ---
 
-## Acknowledgments
+## Resources:
 
 - [OpenAI](https://openai.com/) for providing GPT models.
 - [Pinecone](https://www.pinecone.io/) for vector database services.
 - George R.R. Martin for creating the rich world of Westeros.
+- Kaggle: https://www.kaggle.com/datasets/khulasasndh/game-of-thrones-books
 
