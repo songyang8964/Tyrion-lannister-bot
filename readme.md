@@ -157,6 +157,13 @@ Tyrion-Lannister-AI/
    - Customizable number of relevant documents (k=10)
    - Embedding model: text-embedding-ada-002
 
+
+## Demo Screenshots
+![image](https://github.com/user-attachments/assets/82f79bf9-194a-4163-a6ad-d122e7c7c1b3)
+
+![Snipaste_2024-12-06_18-49-36](https://github.com/user-attachments/assets/0efdf267-8564-4b5a-b675-2e44ac6ba31e)
+
+
 ---
 
 ## Troubleshooting
@@ -245,11 +252,6 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 - [Game of Thrones Books Dataset](https://www.kaggle.com/datasets/khulasasndh/game-of-thrones-books)
 - George R.R. Martin's "A Song of Ice and Fire" series
 ---
-
-## Demo Screenshots
-![image](https://github.com/user-attachments/assets/82f79bf9-194a-4163-a6ad-d122e7c7c1b3)
-
-![Snipaste_2024-12-06_18-49-36](https://github.com/user-attachments/assets/0efdf267-8564-4b5a-b675-2e44ac6ba31e)
 
 
 
