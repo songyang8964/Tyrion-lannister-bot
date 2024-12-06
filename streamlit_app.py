@@ -39,7 +39,7 @@ A sharp wit, an even sharper tongue, and a love for wine and books are my tradem
 In a world of swords and politics, I survive with my intellect. Shall we chat?
 """)
 
-st.sidebar.subheader("Enter Your API Key 🗝️")
+st.sidebar.subheader("Enter Your API Key ")
 open_api_key = st.sidebar.text_input(
     "Open API Key", 
     value=st.session_state.get('open_api_key', ''),
@@ -51,9 +51,8 @@ open_api_key = os.environ.get("OPENAI_API_KEY")
 st.session_state['open_api_key'] = open_api_key
 # load_dotenv(find_dotenv())
 
-with st.sidebar.expander('Advanced Settings ⚙️', expanded=False):
+with st.sidebar.expander('Advanced Settings ', expanded=False):
     open_ai_model = st.text_input('OpenAI Chat Model', DEFAULT_CHAT_MODEL, help='See model options here: https://platform.openai.com/docs/models/overview')   
-
 
 def get_vectorstore():
     # text_field = "text"
@@ -65,12 +64,9 @@ def get_vectorstore():
         index=index, 
         embedding=embed
     )
-
     return vectorstore
 
-@st.cache_data
 def get_response_from_question(_vectorstore, question, memory, k=10):
-
     docs = _vectorstore.similarity_search(question, k=k)
     docs_page_content = " ".join([d.page_content for d in docs])
 
@@ -89,7 +85,8 @@ def get_response_from_question(_vectorstore, question, memory, k=10):
         
         Only use the factual information from these books to answer the question.
         
-        If you feel like you don't have enough information to answer the question, say "Sorry, I'm a Dwarf not a wizard, I don't know the answer to that".
+        ".
+        
         """
 
     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -109,19 +106,42 @@ def get_response_from_question(_vectorstore, question, memory, k=10):
     response = chain.run(question=question, docs=docs_page_content, memory=memory)
     return response, docs
 
+st.markdown("""
+### Example questions you might ask:
+- What is your relationship with your family members?
+- How did you become the Hand of the King?
+- What happened during your trial?
+- What do you think about dragons?
+- Tell me about your experience at The Wall
+""")
+
+# Load Tyrion's avatar image once
+tyrion_avatar = Image.open("Tyrion.jpg")
+# Resize the avatar to a smaller size suitable for chat
+tyrion_avatar = tyrion_avatar.resize((40, 40))
+
+# Initialize session state for messages
 if 'questions' not in st.session_state:
     st.session_state['questions'] = []
 if 'responses' not in st.session_state:
     st.session_state['responses'] = []
 
-question = st.text_input(
-    label="Ask Tyrion a question",
-    value="What role did you play in the battle of the blackwater?"
-)
+col1, col2 = st.columns([4, 1])
 
-if question != "" and (open_api_key == '' or open_api_key is None):
+with col1:
+    question = st.text_input(
+        label="Ask Tyrion a question",
+        value="",
+        placeholder="Type your question here...",
+        label_visibility="collapsed"
+    )
+
+with col2:
+    submit_button = st.button("Ask", use_container_width=True, type="primary")
+
+if (question and submit_button) and (open_api_key == '' or open_api_key is None):
     st.error("⚠️ Please enter your API key in the sidebar")
-else:
+elif question and submit_button:
     vectorstore = get_vectorstore()
     if len(st.session_state['questions']) > 0:
         memory = '\n\n'.join(
@@ -137,9 +157,18 @@ else:
     st.session_state['questions'].append(question)
     st.session_state['responses'].append(response)
 
+    # Display chat messages
     for i in range(len(st.session_state['questions'])):
         question = st.session_state['questions'][i]
         response = st.session_state['responses'][i]
-        message(question, is_user=True)  # align's the message to the left
-        message(response, is_user=False)  # align's the message to the right
-
+        
+        # User message
+        message(question, is_user=True, avatar_style="personas")
+        
+        # Tyrion's message with custom avatar
+        with st.container():
+            cols = st.columns([1, 15])  
+            with cols[0]:
+                st.image(tyrion_avatar, width=40)
+            with cols[1]:
+                st.markdown(f"<div style='background-color: #2e2e2e; padding: 12px; border-radius: 10px; margin-bottom: 10px;'>{response}</div>", unsafe_allow_html=True)
