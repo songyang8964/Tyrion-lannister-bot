@@ -106,11 +106,8 @@ Tyrion-Lannister-AI/
 
 ![alt text](image.png)
 
-![alt text](image-1.png)
+![Snipaste_2024-12-06_18-49-36](https://github.com/user-attachments/assets/bda3576f-b15f-4b5d-aedd-0822f1d94d8f)
 
-![alt text](image-2.png)
-
-![alt text](image-3.png)
 
 ## Technologies Used
 
