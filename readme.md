@@ -2,6 +2,7 @@
 
 This project implements a Tyrion Lannister AI chatbot, designed to simulate the wit and wisdom of the iconic "Game of Thrones" character. It utilizes OpenAI's language models, Pinecone vector database, and LangChain to provide a rich and interactive conversational experience.
 
+View the demo link: https://tyrion-lannister.streamlit.app/
 ---
 
 ## Features
@@ -124,8 +125,6 @@ Tyrion-Lannister-AI/
 ## Future Enhancements
 
 - Add voice-based interaction for a more immersive experience.
-- Expand the knowledge base to include additional characters and events from "Game of Thrones".
-- Deploy the chatbot as a public web service.
 
 ---
 
@@ -135,9 +134,10 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 
 ---
 
-## Acknowledgments
+## Resources:
 
 - [OpenAI](https://openai.com/) for providing GPT models.
 - [Pinecone](https://www.pinecone.io/) for vector database services.
 - George R.R. Martin for creating the rich world of Westeros.
+- Kaggle: https://www.kaggle.com/datasets/khulasasndh/game-of-thrones-books
 
