@@ -244,30 +244,12 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [Game of Thrones Books Dataset](https://www.kaggle.com/datasets/khulasasndh/game-of-thrones-books)
 - George R.R. Martin's "A Song of Ice and Fire" series
-
----
-
-## Acknowledgments
-
-- OpenAI team for GPT models
-- Pinecone team for vector database
-- LangChain community for the framework
-- Streamlit team for the UI framework
-- Game of Thrones community for inspiration
-- All contributors and testers
-
----
-
-## Contact and Support
-
-- Create an issue for bug reports
-- Submit feature requests via GitHub
-- Join our community discussions
-- Follow project updates
-
 ---
 
 ## Demo Screenshots
+![image](https://github.com/user-attachments/assets/82f79bf9-194a-4163-a6ad-d122e7c7c1b3)
+
+![Snipaste_2024-12-06_18-49-36](https://github.com/user-attachments/assets/0efdf267-8564-4b5a-b675-2e44ac6ba31e)
 
 
 
